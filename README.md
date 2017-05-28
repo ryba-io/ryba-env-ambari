@@ -34,7 +34,9 @@ Detailed information are available on the [official website](http://ryba.io).
 ## URLs
 
 * Ambari Operational
-  https://master01.ambari.ryba:8443
+  https://admin01.ambari.ryba:8442
+* Ambari Standalone (views)
+  https://edge01.ambari.ryba:8442
 * Hadoop HDFS NN (krb UI)
   https://master1.ryba:50470 (active)
   https://master2.ryba:50470 (passive)
