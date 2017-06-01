@@ -3,6 +3,7 @@
 
 ## Trunk
 
+* krb5: split between client & server
 * certs: regerate all certifcates after re-ordering
 * ambari: enable jaas
 * ambari: prevent ambari principal collision

@@ -83,7 +83,21 @@ alias ambari_worker03='ssh root@worker03.ambari.ryba'
 ALIASES
 ```
 
-Install the Kerbeors client configuration
+Install the Kerberos client configuration
+
+```bash
+cp -rp /etc/krb5.conf /etc/krb5.conf.bck
+sudo tee /etc/krb5.conf << KRB5
+[libdefaults]
+ default_realm = HADOOP.RYBA
+[realms]
+HADOOP.RYBA = {
+ kdc = master1.ryba
+ admin_server = master1.ryba
+ default_domain = hadoop.ryba
+}
+KRB5
+```
 
 ## Ambari Installation
 
