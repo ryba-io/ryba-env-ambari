@@ -148,6 +148,8 @@ module.exports =
           'HADOOP.RYBA':
             kadmin_principal: 'admin/admin@HADOOP.RYBA'
             kadmin_password: 'test'
+            database_module: 'hadoop_ryba_db'
+            kdc_master_key: 'test'
             principals: [
               principal: 'krbtgt/HADOOP.RYBA@USERS.RYBA'
               password: 'test'
@@ -155,8 +157,6 @@ module.exports =
               principal: 'hdfs@HADOOP.RYBA'
               password: 'hdfs123'
             ]
-            database_module: 'hadoop_ryba_db'
-            kdc_master_key: 'test'
     'masson/core/krb5_client':
       constraints: tags: 'environment': 'dev'
     'masson/commons/java':
