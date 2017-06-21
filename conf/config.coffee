@@ -173,6 +173,10 @@ module.exports =
       constraints: tags: 'environment': 'dev'
       config: ryba: hdf:
         source: 'http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.5.5.0/hdp.repo'
+    'ryba/ambari/repo':
+      constraints: tags: 'environment': 'dev'
+      config: ryba: ambari: repo:
+        source: 'http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0'
     # Ambari
     'ryba/ambari/server':
       constraints: nodes: ['master01']

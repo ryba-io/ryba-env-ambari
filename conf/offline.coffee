@@ -29,6 +29,13 @@ module.exports =
     'masson/core/ntp':
       config: ntp:
         fudge: true
+    'masson/commons/mysql/server':
+      config: mysql: server:
+        repo:
+          source: "#{__dirname}/offline/mysql.repo"
     'ryba/hdp':
       config: ryba: hdp:
         source: "#{__dirname}/offline/hdp.repo"
+    'ryba/ambari/repo':
+      config: ryba: ambari: repo:
+        source: "#{__dirname}/offline/ambari.repo"

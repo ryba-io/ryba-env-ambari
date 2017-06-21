@@ -3,6 +3,7 @@
 
 ## Trunk
 
+* repos: declare independent repo
 * krb5: split between client & server
 * certs: regerate all certifcates after re-ordering
 * ambari: enable jaas
