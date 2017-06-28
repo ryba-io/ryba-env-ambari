@@ -177,6 +177,12 @@ module.exports =
       constraints: tags: 'environment': 'dev'
       config: ryba: ambari: repo:
         source: 'http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0'
+    # 'masson/commons/mariadb/server':
+    #   constraints: nodes: ['master01','master02']
+    #   config: mariadb: server:
+    #     current_password: ''
+    #     password: 'MySQL123-'
+    #     my_conf: {}
     # Ambari
     'ryba/ambari/server':
       constraints: nodes: ['master01']

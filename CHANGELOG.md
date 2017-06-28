@@ -4,6 +4,7 @@
 ## Trunk
 
 * repos: declare independent repo
+* mariadb: add configuration example
 * krb5: split between client & server
 * certs: regerate all certifcates after re-ordering
 * ambari: enable jaas
