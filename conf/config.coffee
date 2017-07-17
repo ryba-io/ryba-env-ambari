@@ -103,7 +103,7 @@ module.exports =
     'masson/core/ssl':
       constraints: tags: 'environment': 'dev'
       config: ssl:
-        'cacert': "#{__dirname}/certs/cacert.pem"
+        'cacert': source: "#{__dirname}/certs/ca.cert.pem", local: true
     'masson/core/iptables':
       constraints: tags: 'environment': 'dev'
       config: iptables:
@@ -127,7 +127,7 @@ module.exports =
           ldapdelete: []
           ldapadd: []
           tls: true
-          tls_ca_cert_file: "#{__dirname}/certs/cacert.pem"
+          tls_ca_cert_file: "#{__dirname}/certs/ca.cert.pem"
           tls_ca_cert_local: true
           tls_cert_local: true
           tls_key_local: true
@@ -155,7 +155,7 @@ module.exports =
       constraints: nodes: ['master03', 'master02']
       config:  openldap_client:
         certificates: [
-          source: "#{__dirname}/certs/cacert.pem", local: true
+          source: "#{__dirname}/certs/ca.cert.pem", local: true
         ]
         config: {}
     'masson/core/krb5_server':
@@ -241,11 +241,11 @@ module.exports =
         ip: '10.10.10.20'
         host: 'admin01.ambari.ryba'
         ssl:
-          'cert': "#{__dirname}/certs/admin01_cert.pem"
-          'key': "#{__dirname}/certs/admin01_key.pem"
+          'cert': source: "#{__dirname}/certs/admin01.cert.pem", local: true
+          'key': source: "#{__dirname}/certs/admin01.key.pem", local: true
         ryba: ssl:
-          'cert': "#{__dirname}/certs/admin01_cert.pem"
-          'key': "#{__dirname}/certs/admin01_key.pem"
+          'cert': "#{__dirname}/certs/admin01.cert.pem"
+          'key': "#{__dirname}/certs/admin01.key.pem"
     'master01':
       tags:
         'environment': 'dev'
@@ -254,11 +254,11 @@ module.exports =
         ip: '10.10.10.22'
         host: 'master01.ambari.ryba'
         ssl:
-          'cert': "#{__dirname}/certs/master01_cert.pem"
-          'key': "#{__dirname}/certs/master01_key.pem"
+          'cert': source: "#{__dirname}/certs/master01.cert.pem", local: true
+          'key': source: "#{__dirname}/certs/master01.key.pem", local: true
         ryba: ssl:
-          'cert': "#{__dirname}/certs/master01_cert.pem"
-          'key': "#{__dirname}/certs/master01_key.pem"
+          'cert': "#{__dirname}/certs/master01.cert.pem"
+          'key': "#{__dirname}/certs/master01.key.pem"
     'master02':
       tags:
         'environment': 'dev'
@@ -267,14 +267,14 @@ module.exports =
         ip: '10.10.10.23'
         host: 'master02.ambari.ryba'
         openldap_server:
-          tls_cert_file: "#{__dirname}/certs/master02_cert.pem"
-          tls_key_file: "#{__dirname}/certs/master02_key.pem"
+          tls_cert_file: "#{__dirname}/certs/master02.cert.pem"
+          tls_key_file: "#{__dirname}/certs/master02.key.pem"
         ssl:
-          'cert': "#{__dirname}/certs/master02_cert.pem"
-          'key': "#{__dirname}/certs/master02_key.pem"
+          'cert': source: "#{__dirname}/certs/master02.cert.pem", local: true
+          'key': source: "#{__dirname}/certs/master02.key.pem", local: true
         ryba: ssl:
-          'cert': "#{__dirname}/certs/master02_cert.pem"
-          'key': "#{__dirname}/certs/master02_key.pem"
+          'cert': "#{__dirname}/certs/master02.cert.pem"
+          'key': "#{__dirname}/certs/master02.key.pem"
     'master03':
       tags:
         'environment': 'dev'
@@ -283,14 +283,14 @@ module.exports =
         ip: '10.10.10.24'
         host: 'master03.ambari.ryba'
         openldap_server:
-          tls_cert_file: "#{__dirname}/certs/master03_cert.pem"
-          tls_key_file: "#{__dirname}/certs/master03_key.pem"
+          tls_cert_file: "#{__dirname}/certs/master03.cert.pem"
+          tls_key_file: "#{__dirname}/certs/master03.key.pem"
         ssl:
-          'cert': "#{__dirname}/certs/master03_cert.pem"
-          'key': "#{__dirname}/certs/master03_key.pem"
+          'cert': source: "#{__dirname}/certs/master03.cert.pem", local: true
+          'key': source: "#{__dirname}/certs/master03.key.pem", local: true
         ryba: ssl:
-          'cert': "#{__dirname}/certs/master03_cert.pem"
-          'key': "#{__dirname}/certs/master03_key.pem"
+          'cert': "#{__dirname}/certs/master03.cert.pem"
+          'key': "#{__dirname}/certs/master03.key.pem"
     'edge01':
       tags:
         'environment': 'dev'
@@ -299,11 +299,11 @@ module.exports =
         ip: '10.10.10.25'
         host: 'edge01.ambari.ryba'
         ssl:
-          'cert': "#{__dirname}/certs/edge01_cert.pem"
-          'key': "#{__dirname}/certs/edge01_key.pem"
+          'cert': source: "#{__dirname}/certs/edge01.cert.pem", local: true
+          'key': source: "#{__dirname}/certs/edge01.key.pem", local: true
         ryba: ssl:
-          'cert': "#{__dirname}/certs/edge01_cert.pem"
-          'key': "#{__dirname}/certs/edge01_key.pem"
+          'cert': "#{__dirname}/certs/edge01.cert.pem"
+          'key': "#{__dirname}/certs/edge01.key.pem"
     'worker01':
       tags:
         'environment': 'dev'
@@ -312,11 +312,11 @@ module.exports =
         ip: '10.10.10.27'
         host: 'worker01.ambari.ryba'
         ssl:
-          'cert': "#{__dirname}/certs/worker01_cert.pem"
-          'key': "#{__dirname}/certs/worker01_key.pem"
+          'cert': source: "#{__dirname}/certs/worker01.cert.pem", local: true
+          'key': source: "#{__dirname}/certs/worker01.key.pem", local: true
         ryba: ssl:
-          'cert': "#{__dirname}/certs/worker01_cert.pem"
-          'key': "#{__dirname}/certs/worker01_key.pem"
+          'cert': "#{__dirname}/certs/worker01.cert.pem"
+          'key': "#{__dirname}/certs/worker01.key.pem"
     'worker02':
       tags:
         'environment': 'dev'
@@ -325,11 +325,11 @@ module.exports =
         ip: '10.10.10.28'
         host: 'worker02.ambari.ryba'
         ssl:
-          'cert': "#{__dirname}/certs/worker02_cert.pem"
-          'key': "#{__dirname}/certs/worker02_key.pem"
+          'cert': source: "#{__dirname}/certs/worker02.cert.pem", local: true
+          'key': source: "#{__dirname}/certs/worker02.key.pem", local: true
         ryba: ssl:
-          'cert': "#{__dirname}/certs/worker02_cert.pem"
-          'key': "#{__dirname}/certs/worker02_key.pem"
+          'cert': "#{__dirname}/certs/worker02.cert.pem"
+          'key': "#{__dirname}/certs/worker02.key.pem"
     'worker03':
       tags:
         'environment': 'dev'
@@ -338,8 +338,8 @@ module.exports =
         ip: '10.10.10.29'
         host: 'worker03.ambari.ryba'
         ssl:
-          'cert': "#{__dirname}/certs/worker03_cert.pem"
-          'key': "#{__dirname}/certs/worker03_key.pem"
+          'cert': source: "#{__dirname}/certs/worker03.cert.pem", local: true
+          'key': source: "#{__dirname}/certs/worker03.key.pem", local: true
         ryba: ssl:
-          'cert': "#{__dirname}/certs/worker03_cert.pem"
-          'key': "#{__dirname}/certs/worker03_key.pem"
+          'cert': "#{__dirname}/certs/worker03.cert.pem"
+          'key': "#{__dirname}/certs/worker03.key.pem"

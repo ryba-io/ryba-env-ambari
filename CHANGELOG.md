@@ -3,6 +3,7 @@
 
 ## Trunk
 
+* ssl: upgrade after latest masson
 * repos: declare independent repo
 * mariadb: add configuration example
 * krb5: split between client & server
