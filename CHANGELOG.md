@@ -3,6 +3,7 @@
 
 ## Trunk
 
+* ssh: move from global to nikita
 * ssl: upgrade after latest masson
 * repos: declare independent repo
 * mariadb: add configuration example
