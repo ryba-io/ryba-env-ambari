@@ -3,6 +3,7 @@
 
 ## Trunk
 
+* vagrant: disable box check update
 * yum: remove clean option
 * ssh: move from global to nikita
 * ssl: upgrade after latest masson
