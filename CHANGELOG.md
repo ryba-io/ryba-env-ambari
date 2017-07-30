@@ -3,6 +3,7 @@
 
 ## Trunk
 
+* run: remove global configuration
 * vagrant: disable box check update
 * yum: remove clean option
 * ssh: move from global to nikita
