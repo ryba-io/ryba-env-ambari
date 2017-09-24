@@ -108,7 +108,7 @@ module.exports =
       config: iptables:
         action: 'stop'
         startup: false
-        log: true
+        redirect_log: true
         rules: [
           # { chain: 'INPUT', jump: 'ACCEPT', source: "10.10.10.0/24", comment: 'Local Network' }
         ]
@@ -182,7 +182,7 @@ module.exports =
       constraints: nodes: ['master01']
       config: mysql: server:
         current_password: ''
-        password: 'MySQL123-'
+        admin_password: 'MySQL123-'
         my_conf: {}
     'ryba/hdp':
       constraints: tags: 'environment': 'dev'
@@ -201,7 +201,7 @@ module.exports =
     # Ambari
     'ryba/ambari/server':
       constraints: nodes: ['master01']
-      config: ryba: ambari_server:
+      config: ryba: ambari: server:
         repo: false
         # cluster_name: 'cluster01'
         admin_password: 'admin123'
@@ -216,7 +216,7 @@ module.exports =
         jaas: principal: 'ambari@HADOOP.RYBA'
     'ryba/ambari/standalone':
       constraints: nodes: ['edge01']
-      config: ryba: ambari_standalone:
+      config: ryba: ambari: standalone:
         repo: false
         admin_password: 'admin123'
         master_key: 'ambariMasterKey123'
